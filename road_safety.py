@@ -544,7 +544,7 @@ def render_predict():
 
         html.Div([
             html.Label("Hour of Day", className="gov-label"),
-            html.Span("0 = midnight, 12 = noon", className="gov-hint"),
+            html.Span(" 0 = midnight, 12 = noon", className="gov-hint"),
             dcc.Slider(id="inp-hour", min=0, max=23, step=1, value=9,
                        marks={i: str(i) for i in range(0, 24, 3)},
                        tooltip={"placement": "bottom", "always_visible": True}),
@@ -736,7 +736,6 @@ app = dash.Dash(__name__, suppress_callback_exceptions=True)
 app.title = "Road Accident Severity – GOV.UK"
 
 app.layout = html.Div([
-    html.Style(GOVUK_CSS),
 
     # Header
     html.Header(html.Div([
